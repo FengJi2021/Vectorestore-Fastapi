@@ -1,0 +1,10 @@
+{
+    "name": "vectorstore-api",
+    "version": "1.0.0",
+    "scripts": {
+        "preinstall": "echo $SERVICE_ACCOUNT_CREDENTIALS | base64 -d > app/service_account.json",
+        "build": "pip install -r app/requirements.txt",
+        "start": "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    }
+}
+  
