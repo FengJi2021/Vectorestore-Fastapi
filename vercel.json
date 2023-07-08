@@ -1,20 +1,5 @@
 {
     "version": 2,
     "name": "vectorstore-api",
-    "builds": [
-      {
-        "src": "app/main.py",
-        "use": "@vercel/python",
-        "config": {
-          "maxLambdaSize": "50mb"
-        }
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "app/main.py"
-      }
-    ]
 }
   
