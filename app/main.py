@@ -90,3 +90,10 @@ async def handle_chat(human_msg: str):
     response = chat.send_message(human_msg, **parameters)
     # Return the model's response
     return {"response": response.text}
+
+@app.post("/embedding")
+async def handle_question(msg: str):
+    """
+    Endpoint to handle incoming questions.
+    """
+    return {"response": "Hello World!"}
