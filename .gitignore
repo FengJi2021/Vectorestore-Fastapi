@@ -1,3 +1,5 @@
+.venv
+try/
 .idea
 __pycache__
 app/pdf2jsonl/node_modules
