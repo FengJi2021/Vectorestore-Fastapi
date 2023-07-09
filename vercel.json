@@ -1,5 +1,18 @@
 {
     "version": 2,
-    "name": "vectorstore-api"
+    "name": "vectorstore-api",
+    "devCommand": "uvicorn main:app --host 0.0.0.0 --port 3000",
+    "builds": [
+        {
+          "src": "api/index.py",
+          "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+          "src": "/(.*)",
+          "dest": "api/index.py"
+        }
+    ]
 }
   
