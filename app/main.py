@@ -91,9 +91,13 @@ async def handle_chat(human_msg: str):
     # Return the model's response
     return {"response": response.text}
 
+from vector_qa import VectorQA
+langchain_qa = VectorQA()
+
 @app.post("/embedding")
 async def handle_question(msg: str):
     """
     Endpoint to handle incoming questions.
     """
-    return {"response": "Hello World!"}
+    response = langchain_qa.process(msg)
+    return {"response": "Answer: " + response + "\n"}
