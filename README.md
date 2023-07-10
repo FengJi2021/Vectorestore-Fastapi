@@ -1,16 +1,21 @@
-# Getting started with Vertex AI Generative AI
+# Vectex AI hackathon
 
-## Before you begin
+## Summary
 
-This is a simple starter boilerplate that gives you a basic FastAPI setup with a few endpoints. It is meant to be used as a starting point for your own projects.
+Using vector store with vertex ai to generate fact based conversation
+
+## How to start
+
+Go to the link: https://vectorstore-chatbot.vercel.app/
+With the front end here: https://github.com/FengJi2021/vectorstore-chatbot
+
+Fastapi is deployed on GCP VM.
 
 ### Clone and install dependencies
 
 In your terminal, run the following commands:
 
 ```
-git clone git@github.com:lablab-ai/Google-VertexAI-FastAPI.git
-cd Google-VertexAI-FastAPI
 cd app
 pip install -r requirements.txt
 ```
@@ -50,19 +55,3 @@ When the server is running, you can test it by going to `http://localhost:8080/d
 
 ![image](https://github.com/lablab-ai/Google-VertexAI-FastAPI/assets/2171273/13df1172-0b77-43f3-85a0-0bf936bbd8db)
 ![image](https://github.com/lablab-ai/Google-VertexAI-FastAPI/assets/2171273/e69f7892-6945-4d85-987e-dbbc23e553bd)
-
-Good luck! and don't forget to star this repo if you like it!
-
-**Thank you** for reading! If you enjoyed this tutorial you can find more and continue reading
-[on our tutorial page](https://lablab.ai/t/)
-
----
-
-[![Artificial Intelligence Hackathons, tutorials and Boilerplates](https://storage.googleapis.com/lablab-static-eu/images/github/lablab-banner.jpg)](https://lablab.ai)
-
-## Join the LabLab Discord
-
-![Discord Banner 1](https://discordapp.com/api/guilds/877056448956346408/widget.png?style=banner1)  
-On lablab discord, we discuss this repo and many other topics related to artificial intelligence! Checkout upcoming [Artificial Intelligence Hackathons](https://lablab.ai) Event
-
-[![Acclerating innovation through acceleration](https://storage.googleapis.com/lablab-static-eu/images/github/nn-group-loggos.jpg)](https://newnative.ai)
