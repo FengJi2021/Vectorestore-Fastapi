@@ -10,8 +10,9 @@ import json  # add this line
 
 # Load the service account json file
 # Update the values in the json file with your own
+CRED_PATH = "../cred/service_account.json"
 with open(
-    "service_account.json"
+    CRED_PATH
 ) as f:  # replace 'serviceAccount.json' with the path to your file if necessary
     service_account_info = json.load(f)
 
@@ -24,7 +25,7 @@ aiplatform.init(
     credentials=my_credentials,
 )
 
-with open("service_account.json", encoding="utf-8") as f:
+with open(CRED_PATH, encoding="utf-8") as f:
     project_json = json.load(f)
     project_id = project_json["project_id"]
 
