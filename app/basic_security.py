@@ -1,6 +1,7 @@
 import secrets
-from fastapi.security import HTTPBasicCredentials
+
 from fastapi import HTTPException, status
+from fastapi.security import HTTPBasicCredentials
 
 
 def verify_http_basic_credentials(credentials: HTTPBasicCredentials):

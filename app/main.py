@@ -1,19 +1,18 @@
+import json  # add this line
+
+import google.cloud.aiplatform as aiplatform
+import vertexai
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from google.auth import credentials
+from fastapi.openapi.docs import get_swagger_ui_html
 from google.oauth2 import service_account
-import google.cloud.aiplatform as aiplatform
-from vertexai.preview.language_models import ChatModel, InputOutputTextPair
-from fastapi.openapi.docs import get_swagger_ui_html, get_redoc_html
-import vertexai
-import json  # add this line
+from vector_qa import VectorQA
+from vertexai.preview.language_models import ChatModel
 
 # Load the service account json file
 # Update the values in the json file with your own
 CRED_PATH = "../cred/service_account.json"
-with open(
-    CRED_PATH
-) as f:  # replace 'serviceAccount.json' with the path to your file if necessary
+with open(CRED_PATH) as f:
     service_account_info = json.load(f)
 
 my_credentials = service_account.Credentials.from_service_account_info(
@@ -65,17 +64,12 @@ async def get_documentation():
     return get_swagger_ui_html(openapi_url="/openapi.json", title="docs")
 
 
-@app.get("/redoc")
-async def get_documentation():
-    """Endpoint to serve ReDoc for API documentation"""
-    return get_redoc_html(openapi_url="/openapi.json", title="redoc")
-
-
 @app.post("/chat")
 async def handle_chat(human_msg: str):
     """
     Endpoint to handle chat.
-    Receives a message from the user, processes it, and returns a response from the model.
+    Receives a message from the user, processes it
+    and returns a response from the model.
     """
     chat_model = ChatModel.from_pretrained("chat-bison@001")
     parameters = {
@@ -92,8 +86,9 @@ async def handle_chat(human_msg: str):
     # Return the model's response
     return {"response": response.text}
 
-from vector_qa import VectorQA
+
 langchain_qa = VectorQA()
+
 
 @app.post("/embedding")
 async def handle_question(msg: str):
